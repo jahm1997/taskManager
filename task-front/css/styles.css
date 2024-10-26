@@ -1,0 +1,242 @@
+/* Estilos Globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Estilos del Header */
+header {
+  background-color: #4a76a8;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#logoutButton {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #e74c3c;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#logoutButton:hover {
+  background-color: #c0392b;
+}
+
+/* Contenedor Principal */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.task-manager {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Lista de Tareas */
+.task-list {
+  flex: 2;
+}
+
+.task-list h2 {
+  margin-bottom: 20px;
+}
+
+#addTaskButton {
+  background-color: #27ae60;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#addTaskButton:hover {
+  background-color: #219150;
+}
+
+#tasksContainer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+}
+
+.task-info input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+.task-actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.task-actions button.edit-btn {
+  color: #2980b9;
+}
+
+.task-actions button.delete-btn {
+  color: #e74c3c;
+}
+
+.task-actions button.comment-btn {
+  color: #16a085;
+}
+
+/* Formulario de Tareas */
+.task-form-container {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.task-form-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.task-form-container button {
+  background-color: #4a76a8;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.task-form-container button:hover {
+  background-color: #3a5c81;
+}
+
+#cancelButton {
+  background-color: #bdc3c7;
+}
+
+#cancelButton:hover {
+  background-color: #95a5a6;
+}
+
+/* Página de Login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-form h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.login-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.login-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.login-form .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  background-color: #4a76a8;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.login-form button:hover {
+  background-color: #3a5c81;
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-top: 10px;
+}

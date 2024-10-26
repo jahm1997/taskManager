@@ -1,0 +1,9 @@
+{
+    "nombre":"tarea 1",
+    "estado":"pendiente",
+    "prioridad": 1,
+    "usuario":1,
+    "fechaLimite":"2024-10-26T23:00:00.000Z",
+    "fechaCreación":"2024-10-26T08:00:00.000Z",
+    "zona":"1"
+}
