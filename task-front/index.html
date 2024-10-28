@@ -17,7 +17,6 @@
         <!-- Barra lateral de navegación -->
         <div class="sidebar">
             <div class="logo-container">
-                <img src="images/logo.png" alt="EcoEnergía" class="logo">
                 <h2>EcoEnergía</h2>
             </div>
             <nav class="nav-menu">
@@ -25,10 +24,10 @@
                     <li class="nav-item active" data-section="inicio">
                         <a href="#"><i class="fas fa-home"></i> Inicio</a>
                     </li>
-                    <li class="nav-item" data-section="login">
+                    <li class="nav-item" data-section="login" id="loginMenuItem">
                         <a href="#"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
                     </li>
-                    <li class="nav-item" data-section="registro">
+                    <li class="nav-item" data-section="registro" id="registerMenuItem">
                         <a href="#"><i class="fas fa-user-plus"></i> Registrarse</a>
                     </li>
                     <li class="nav-item" data-section="ver-tareas" id="verTareasMenuItem" style="display: none;">
@@ -123,7 +122,7 @@
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Descripción</th>
-                                    <th>Actividad</th>
+                                    <th>Completado</th>
                                     <th>Asignado a</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -224,6 +223,8 @@
             const loginContainer = document.getElementById('loginContainer');
             const dashboardContainer = document.getElementById('dashboardContainer');
             const verTareasMenuItem = document.getElementById('verTareasMenuItem');
+            const loginMenuItem = document.getElementById('loginMenuItem');
+            const registerMenuItem = document.getElementById('registerMenuItem');
 
             if (currentUser && currentUser.nombre) {
                 loginContainer.style.display = 'none';
@@ -231,11 +232,17 @@
                 document.getElementById('welcomeMessage').textContent = `Bienvenido, ${currentUser.nombre}`;
                 // Mostrar el menú "Ver Tareas"
                 verTareasMenuItem.style.display = 'block';
+                // Ocultar los menús "Ingresar" y "Registrarse"
+                loginMenuItem.style.display = 'none';
+                registerMenuItem.style.display = 'none';
             } else {
                 loginContainer.style.display = 'block';
                 dashboardContainer.style.display = 'none';
                 // Ocultar el menú "Ver Tareas"
                 verTareasMenuItem.style.display = 'none';
+                // Mostrar los menús "Ingresar" y "Registrarse"
+                loginMenuItem.style.display = 'block';
+                registerMenuItem.style.display = 'block';
             }
         }
 
@@ -433,7 +440,7 @@
         // Renderizar tareas en la tabla
         function renderTasks(tasks) {
             console.log(tasks);
-            
+
             tasksTableBody.innerHTML = ''; // Limpiar la tabla
             tasks.forEach((task) => {
                 const row = document.createElement('tr');
@@ -447,7 +454,7 @@
                 row.appendChild(descCell);
 
                 const activityCell = document.createElement('td');
-                activityCell.textContent = task.actividad ? task.actividad.nombre : '';
+                activityCell.textContent = task.estado ? task.estado : '';
                 row.appendChild(activityCell);
 
                 const userCell = document.createElement('td');
